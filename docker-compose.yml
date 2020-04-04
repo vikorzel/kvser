@@ -1,0 +1,12 @@
+version: '2'
+services:
+  tarantool:
+    build: .
+    ports: 
+     - "5000:5000"
+    volumes: 
+     - "./lua:/opt/tarantool/lua"
+     - "./log:/opt/tarantool/log"
+     - "./data:/var/lib/tarantool"
+     - "./config:/opt/tarantool/config"
+    image: tarantool/tarantool:2.3.1
